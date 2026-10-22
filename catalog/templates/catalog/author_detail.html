@@ -7,7 +7,8 @@
   <div style="margin-left:20px;margin-top:20px">
     <h4>Books</h4>
 
-    {% for book in author.book_set.all %}
+    <!-- REWRITTEN: Use the new related_name 'books' instead of 'book_set' -->
+    {% for book in author.books.all %}
       <p>
         <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
       </p>
