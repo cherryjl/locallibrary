@@ -129,7 +129,7 @@ def seed_books(apps, schema_editor):
         title="Nimona",
         author=stevenson,
         summary="Nimona is an impulsive young shapeshifter with a knack for villainy. Lord Ballister Blackheart is a villain with a vendetta. As sidekick and supervillain, Nimona and Lord Blackheart are about to wreak some serious havoc. Their mission: Prove to the kingdom that Sir Ambrosius Goldenloin and his buddies at the Institution of Law Enforcement and Heroics aren't the heroes everyone thinks they are. But as small acts of mischief escalate into a vicious battle, Lord Blackheart realizes that Nimonaâ€™s powers are as murky and mysterious as her past. And her unpredictable wild side might be more dangerous than he is willing to admit. Nemeses! Dragons! Science! Symbolism! After a decade, everyone's favorite shapeshifter continues to capture hearts.",
-        isbn="0063434695",
+        isbn="9780062278227",
         language=english,
     )
     b_graphic_novels.genre.set([graphic_novels])
@@ -139,7 +139,7 @@ def seed_books(apps, schema_editor):
         title="Feminism Is for Everybody: Passionate Politic",
         author=hooks,
         summary="...[hooks's] is a vision of a beloved community that appeals to all those committed to equality, mutual respect, and justice. hooks applies her critical analysis to the most contentious and challenging issues facing feminists today, including reproductive rights, violence, race, class, and work. With her customary insight and unsparing honesty, hooks calls for a feminism free from divisive barriers but rich with rigorous debate. In language both eye-opening and optimistic, hooks encourages us to demand alternatives to patriarchal, racist, and homophobic culture, and to imagine a different future. hooks speaks to all those in search of true liberation, asking readers to take look at feminism in a new light, to see that it touches all lives. Issuing an invitation to participate fully in feminist movement and to benefit fully from it, hooks shows that feminismâ€”far from being an outdated concept or one limited to an intellectual elite--is indeed for everybody.",
-        isbn="0896086283",
+        isbn="3784098126748",
         language=english,
     )
     b_politics.genre.set([politics])
@@ -158,7 +158,7 @@ def seed_books(apps, schema_editor):
         title="The Food Lab: Better Home Cooking Through Science",
         author=kenji,
         summary="Ever wondered how to pan-fry a steak with a charred crust and an interior that's perfectly medium-rare from edge to edge when you cut into it? How to make homemade mac 'n' cheese that is as satisfyingly gooey and velvety-smooth as the blue box stuff, but far tastier? How to roast a succulent, moist turkey (forget about brining!)â€”and use a foolproof method that works every time? As Serious Eats's culinary nerd-in-residence, J. Kenji LÃ³pez-Alt has pondered all these questions and more. In The Food Lab, Kenji focuses on the science behind beloved American dishes, delving into the interactions between heat, energy, and molecules that create great food. Kenji shows that often, conventional methods don't work that well, and home cooks can achieve far better results using newâ€”but simpleâ€”techniques. In hundreds of easy-to-make recipes with over 1,000 full-color images, you will find out how to make foolproof Hollandaise sauce in just two minutes, how to transform one simple tomato sauce ...",
-        isbn="0393081087",
+        isbn="8626508427851",
         language=english,
     )
     b_food_lab.genre.set([food])
@@ -168,7 +168,7 @@ def seed_books(apps, schema_editor):
         title="Every Night is Pizza Night",
         author=kenji,
         summary='Pipo thinks that pizza is the best. No, Pipo knows that pizza is the best. It is scientific fact. But when she sets out on a neighborhood-spanning quest to prove it, she discovers that "best" might not mean what she thought it meant.',
-        isbn="1324005254",
+        isbn="1234582098592",
         language=english,
     )
     b_pizza_night.genre.set([kids])
