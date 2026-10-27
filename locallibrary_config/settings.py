@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'catalog.apps.CatalogConfig', # This object was created for us in /catalog/apps.py
     'chat',
     'ninja',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'locallibrary_config.urls'
@@ -155,6 +158,14 @@ LOGGING = {
     "handlers": {"console": {"class": "logging.StreamHandler"}},
     "root": {"handlers": ["console"], "level": "WARNING"},
 }
+
+# django-allauth configuration
+AUTHENTICATION_BACKENDS = [
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 SESSION_SAVE_EVERY_REQUEST = True
 LOGIN_REDIRECT_URL = '/'

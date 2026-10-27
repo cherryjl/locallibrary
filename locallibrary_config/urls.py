@@ -47,12 +47,12 @@ from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-urlpatterns += [
-    path('accounts/', include('django.contrib.auth.urls')),
-]
-
 from .api import api
 
 urlpatterns += [
     path('api/', api.urls),
+]
+
+urlpatterns += [
+    path('accounts/', include('allauth.urls')),
 ]
