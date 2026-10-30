@@ -92,6 +92,10 @@ DATABASES = {
     "default": env.db(default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
 }
 
+# Force the test database to be written to disk instead of memory
+DATABASES["default"]["TEST"] = {
+    "NAME": BASE_DIR / "test_db.sqlite3",
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
@@ -147,7 +151,10 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": ["redis://localhost:6379"],
+            "hosts": [{
+                "address": "redis://127.0.0.1:6379",
+                "socket_timeout": 10,  # Overrides the default 5-second timeout
+            }],
         },
     },
 }

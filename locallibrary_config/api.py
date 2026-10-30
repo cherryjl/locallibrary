@@ -1,14 +1,9 @@
 # locallibrary_config/api.py
 from ninja import NinjaAPI
+from ninja.security import django_auth
 
-api = NinjaAPI()
+from chat.api import router as rooms_router
 
+api = NinjaAPI(auth=django_auth)
 
-@api.get("/hello")
-def hello(request, name: str = "world"):
-    return {"message": f"Hello, {name}!"}
-
-# locallibrary_config/api.py
-@api.get("/add")
-def add(request, a: int, b: int):
-    return {"result": a + b}
+api.add_router("/rooms", rooms_router)

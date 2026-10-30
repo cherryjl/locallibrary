@@ -10,18 +10,16 @@
 </head>
 
 <body>
-    <form>
-        <textarea id="chat-log" cols="100" rows="20">{% for chat_message in chat_messages %}{{ chat_message.content }}{% endfor %}</textarea><br>
+        <textarea id="chat-log" cols="100" rows="20">{% for chat_message in chat_messages %}{{ chat_message.content }}
+{% endfor %}</textarea><br>
         <input id="chat-message-input" type="text" size="100"><br>
         <input id="chat-message-submit" type="button" value="Send">
         {{ room_name|json_script:"room-name" }}
-    </form>
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
 
         // Use wss:// when the page was loaded over https://, otherwise ws://
         const wsScheme = window.location.protocol === 'https:' ? 'wss://' : 'ws://';
-
 
         const chatSocket = new WebSocket(
             wsScheme
@@ -42,16 +40,24 @@
 
         document.querySelector('#chat-message-input').focus();
 
+        // Trigger the button click when Enter is pressed
+        document.querySelector('#chat-message-input').onkeyup = function (e) {
+            if (e.key === 'Enter') {
+                document.querySelector('#chat-message-submit').click();
+            }
+        };
 
-        document.querySelector('form').addEventListener('submit', (e) => {
-            e.preventDefault();
+        // Handle the actual sending when the button is clicked
+        document.querySelector('#chat-message-submit').onclick = function (e) {
             const messageInputDom = document.querySelector('#chat-message-input');
             const message = messageInputDom.value;
+            
             chatSocket.send(JSON.stringify({
                 'message': message
             }));
+            
             messageInputDom.value = '';
-        });
+        };
     </script>
 </body>
 
